@@ -17,6 +17,7 @@ class Program
             container.AddItem(item);
         }
         Console.WriteLine($"Total size before GC: {container.GetTotalSize()} bytes");
+        // calling garbage collector and nothing changed because we are storing references
         GC.Collect();
         Console.WriteLine("GC.Collect() was called.");
         Console.WriteLine($"Total size after GC: {container.GetTotalSize()} bytes");
