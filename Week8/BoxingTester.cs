@@ -7,10 +7,10 @@ public static class BoxingTester
         // creating a variable a
         int a = 10;
 
-        // boxing a
+        // Box the value type into an object reference (added an instance of object to heap)
         object obj = a;
 
-        // unboxing into b
+        // Unbox a reference into an object with checking type (copied reference from heap and adding to stack)
         int b = (int)obj;
 
         // printing a and b
