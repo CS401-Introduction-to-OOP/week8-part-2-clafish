@@ -7,14 +7,17 @@ public class NetworkResource : Resource, IDisposable
     }
     public override void Open()
     {
+        Console.WriteLine($"{Name} network is opened");
         IsOpen = true;
     }
     public override void Close()
     {
+        
         IsOpen = false;
     }
     public void Dispose()
     {
+        Console.WriteLine($"{Name} network was disposed successfully");
         Close();
     }
 }

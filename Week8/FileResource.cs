@@ -8,6 +8,7 @@ public class FileResource : Resource, IDisposable
     
     public override void Open()
     {
+        Console.WriteLine($"{Name} file is opened");
         IsOpen = true;
     }
 
@@ -18,6 +19,7 @@ public class FileResource : Resource, IDisposable
 
     public void Dispose()
     {
+        Console.WriteLine($"{Name} file was disposed successfully");
         Close();
     }
 }
