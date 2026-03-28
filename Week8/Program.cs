@@ -4,20 +4,22 @@ class Program
 {
     public static void Main()
     {
-        var file = new FileResource("report.txt");
-        var network = new NetworkResource("api.company.local");
-        var manager = new ResourceManager<Resource>();
-        manager.Add(file);
-        manager.Add(network);
+        Point p1 = new Point { X = 1, Y = 2 };
+        Point p2 = p1;
+        p2.X = 10;
         
-        manager.OpenAll();
-        
-        using(var res = new FileResource("mainfile.txt"))
-        {
-            res.Open();
-        }
-        
-        manager.CloseAll();
+        p1.Print();
+        p2.Print();
+
+// Reference type demo
+        PointRef r1 = new PointRef { X = 1, Y = 2 };
+        PointRef r2 = r1;
+
+        r2.Y = 42;
+        r1.Print();
+        r2.Print();
+
+// Boxing demo
+        BoxingTester.Test();
     }
-    
 }
